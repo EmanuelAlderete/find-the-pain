@@ -195,5 +195,10 @@
         position: absolute;
         top: 150px;
         left: 150px;
-        width: 100%;
+        width: 60%;
+    }
+
+    .card-result {
+        background: #0c0e10;
+        margin-right: 10px;
     }

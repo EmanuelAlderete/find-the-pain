@@ -36,34 +36,34 @@
 </header>
 
 <div class="row list-form">
-    @if($sintomas)
-    <h1>Selecione os sintomas que você apresenta:</h1>
-    <hr>
-        <div class="col-sm-12">
-            <form action="{{ route('resultado') }}" method="post">
-                @csrf
-                <div class="form-group">
-                    <select name="sintomas[]" class="form-control" multiple>
-                        @forelse($sintomas as $sintoma)
-                            <option value="{{ $sintoma->id }}">{{ $sintoma->nome }}</option>
-                        @empty
-
-                        <h2>Infelizmente não encontramos nenhum resultado</h2>
-                        @endforelse
-                    </select>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-default" type="submit">Buscar resultados</button>
-                </div>
-            </form>
+    @if($problemas)
+        <div class="col-12">
+            <h2>Você pode ter os seguintes problemas: </h2>
         </div>
+    <div class="row" style="width: 100%">
+        @forelse($problemas as $problema)
+            <div class="col-5">
+                <div class="card card-result" >
+                    <div class="card-header">
+                        {{ $problema->nome }}
+                    </div>
+                    <div class="card-body">
+                        {{ $problema->helper }}
+                    </div>
+                </div>
+            </div>
+        @empty
+
+            Erro
+
+        @endforelse
     </div>
 
-@else
+    @else
 
-    <h2>Não foram encontrados resultados conclusivos. Lamentamos</h2>
+        <h2>Não foram encontrados resultados conclusivos. Lamentamos</h2>
 
-@endif
+    @endif
 
 
 <script src="{{ asset('js/site.js') }}"></script>
