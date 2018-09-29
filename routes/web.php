@@ -12,9 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('site.index');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+
+
+Route::post('/sintoma/store', 'SintomasController@store')->name('sintoma-store');
+Route::post('/problemas/store', 'ProblemasController@store')->name('problema-store');
+Route::post('/subparte/store', 'SubPartesController@store')->name('subparte-store');
+Route::post('/parte/store', 'PartesController@store')->name('parte-store');
+

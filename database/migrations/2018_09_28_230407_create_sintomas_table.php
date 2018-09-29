@@ -20,7 +20,6 @@ class CreateSintomasTable extends Migration
             $table->string('nome')->nullable();
             $table->text('helper')->nullable();
             $table->text('image')->nullable();
-
         });
     }
 

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Parte;
+use App\Problema;
+use App\Sintoma;
+use App\SubParte;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +27,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $partes = Parte::all();
+        $subpartes = SubParte::all();
+        $problemas = Problema::all();
+        $sintomas = Sintoma::all();
+
+        return view('home', [
+            'subpartes' => $subpartes,
+            'problemas' => $problemas,
+            'sintomas'  => $sintomas,
+            'partes'    => $partes,
+        ]);
     }
 }

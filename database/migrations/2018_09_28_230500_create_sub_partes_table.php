@@ -25,18 +25,6 @@ class CreateSubPartesTable extends Migration
 
             $table->timestamps();
         });
-
-        Schema::create('sintoma_sub_parte', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-
-            $table->integer('sintoma_id')->unsigned()->nullable();
-            $table->foreign('sintoma_id')->references('id')->on('sintomas')->onDelete('cascade');
-
-            $table->integer('subparte_id')->unsigned()->nullable();
-            $table->foreign('subparte_id')->references('id')->on('sub_partes')->onDelete('cascade');
-
-        });
     }
 
     /**
@@ -47,6 +35,5 @@ class CreateSubPartesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('sub_partes');
-        Schema::dropIfExists('sintoma_sub_parte');
     }
 }
