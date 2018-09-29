@@ -8,12 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>New Age - Start Bootstrap Theme</title>
+    <title>FindThePain</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-    <link href="css/site.css" rel="stylesheet">
+    <link href="{{ asset('css/site.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
     <style>
 
@@ -25,7 +26,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.html">FindThePain</a>
+        <a class="navbar-brand js-scroll-trigger" id="logo" href="/">FindThePain</a>
 
     </div>
 </nav>
@@ -37,7 +38,7 @@
 
 </header>
 
-<script src="js/site.js"></script>
+<script src="{{ asset('js/site.js') }}"></script>
 
 
 </body>

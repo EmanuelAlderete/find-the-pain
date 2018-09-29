@@ -34,3 +34,9 @@ Route::post('/problemas/store', 'ProblemasController@store')->name('problema-sto
 Route::post('/subparte/store', 'SubPartesController@store')->name('subparte-store');
 Route::post('/parte/store', 'PartesController@store')->name('parte-store');
 
+//=================================================================================================
+//==================================SISTEMA SITE===================================================
+//=================================================================================================
+
+Route::get('/parte/{nome}', 'SiteController@parte')->name('parte');
+Route::get('/subparte/{nome}', 'SiteController@subparte')->name('subparte');
