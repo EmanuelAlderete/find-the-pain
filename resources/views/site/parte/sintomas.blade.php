@@ -42,7 +42,7 @@
         <div class="col-sm-12">
             <form action="{{ route('resultado') }}" method="post">
                 @csrf
-                <input type="hidden" value="{{ $subparte_id }}">
+                <input type="hidden" name="subparte_id" value="{{ $subparte_id }}">
                 <div class="form-group">
                     <select name="sintomas[]" class="form-control" multiple>
                         @forelse($sintomas as $sintoma)

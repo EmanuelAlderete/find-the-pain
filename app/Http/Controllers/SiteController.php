@@ -49,10 +49,11 @@ class SiteController extends Controller
         foreach ($sintomas_ids as $id) {
             $sintoma = Sintoma::find($id);
             $sintoma->problemas()->get();
-
             foreach ($sintoma->problemas()->get() as $problema) {
                 if (!in_array($problema->id, $problemas_ids)) {
-                    array_push($array, $problema);
+                    if ($problema->sub_parte_id == $request->get('subparte_id')){
+                        array_push($array, $problema);
+                    }
                     array_push($problemas_ids, $problema->id);
                 }
             }
