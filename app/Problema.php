@@ -11,13 +11,26 @@ class Problema extends Model
     }
 
     public function subparte() {
-        return $this->belongsTo(SubParte::class, 'subparte_id');
+        return $this->belongsTo(SubParte::class, 'sub_parte_id');
     }
 
     protected $fillable = [
         'nome',
         'helper',
         'image',
-        'subparte_id'
+        'sub_parte_id'
     ];
+
+    public function sintomasToString($problema_id) {
+        $sintomas = Problema::find($problema_id)->sintomas()->get();
+        $string = [];
+
+        foreach ($sintomas as $sintoma) {
+            array_push($string, $sintoma->nome);
+        }
+
+        $string = implode(', ', $string);
+
+        return $string;
+    }
 }

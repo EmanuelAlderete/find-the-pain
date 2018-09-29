@@ -32,9 +32,24 @@
 </nav>
 
 <header class="masthead">
-    @yield('content')
+
 </header>
 
+<div class="row list-form">
+    <h1>Você possui algum desses sintomas??</h1>
+    <hr>
+        <div class="col-sm-12">
+            <form action="/problema" method="post">
+                @forelse($sintomas as $sintoma)
+                    <div class="form-group">
+                       {{ $sintoma->nome }} - <input type="checkbox" value="{{ $sintoma->id }}">
+                    </div>
+                @empty
+                    <h2>Infelizmente não encontramos nenhum resultado</h2>
+                @endforelse
+            </form>
+        </div>
+    </div>
 
 
 <script src="{{ asset('js/site.js') }}"></script>

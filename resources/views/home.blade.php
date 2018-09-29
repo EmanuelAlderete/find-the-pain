@@ -61,6 +61,87 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+
+                                <div class="col-sm-12 col-md-4">
+                                    <table class="table">
+                                        <h6>Partes</h6>
+                                        <thead>
+                                            <td>ID</td>
+                                            <td>Nome</td>
+                                        </thead>
+                                        <tbody>
+                                            @forelse($partes as $parte)
+                                                <tr>
+                                                    <td>{{ $parte->id }}</td>
+                                                    <td>{{ $parte->nome }}</td>
+                                                </tr>
+                                            @empty
+                                                Sem dados
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <table class="table">
+                                        <h6>Sub Partes</h6>
+                                        <thead>
+                                        <td>ID</td>
+                                        <td>Nome</td>
+                                        </thead>
+                                        <tbody>
+                                        @forelse($subpartes as $subparte)
+                                            <tr>
+                                                <td>{{ $subparte->id }}</td>
+                                                <td>{{ $subparte->nome }}</td>
+                                            </tr>
+                                        @empty
+                                            Sem dados
+                                        @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <table class="table">
+                                        <h6>Sintomas</h6>
+                                        <thead>
+                                        <td>ID</td>
+                                        <td>Nome</td>
+                                        </thead>
+                                        <tbody>
+                                        @forelse($sintomas as $sintoma)
+                                            <tr>
+                                                <td>{{ $sintoma->id }}</td>
+                                                <td>{{ $sintoma->nome }}</td>
+                                            </tr>
+                                        @empty
+                                            Sem dados
+                                        @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4">
+                                    <table class="table">
+                                        <h6>Problemas</h6>
+                                        <thead>
+                                        <td>ID</td>
+                                        <td>Nome</td>
+                                        </thead>
+                                        <tbody>
+                                        @forelse($problemas as $problema)
+                                            <tr>
+                                                <td>{{ $problema->id }}</td>
+                                                <td>{{ $problema->nome }}</td>
+                                            </tr>
+                                        @empty
+                                            Sem dados
+                                        @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="partes" role="tabpanel" aria-labelledby="partes-tab">

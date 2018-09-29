@@ -21,8 +21,8 @@ class CreateProblemasTable extends Migration
             $table->text('helper')->nullable();
             $table->text('image')->nullable();
 
-            $table->integer('subparte_id')->unsigned()->nullable();
-            $table->foreign('subparte_id')->references('id')->on('sub_partes')->onDelete('cascade');
+            $table->integer('sub_parte_id')->unsigned()->nullable();
+            $table->foreign('sub_parte_id')->references('id')->on('sub_partes')->onDelete('cascade');
 
 
         });

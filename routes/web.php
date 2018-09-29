@@ -39,4 +39,4 @@ Route::post('/parte/store', 'PartesController@store')->name('parte-store');
 //=================================================================================================
 
 Route::get('/parte/{nome}', 'SiteController@parte')->name('parte');
-Route::get('/subparte/{nome}', 'SiteController@subparte')->name('subparte');
+Route::get('/subparte/{id}', 'SiteController@subparte')->name('subparte');
