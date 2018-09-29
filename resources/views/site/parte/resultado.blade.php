@@ -42,7 +42,7 @@
         </div>
     <div class="row" style="width: 100%">
         @forelse($problemas as $problema)
-            <div class="col-5">
+            <div class="col-4">
                 <div class="card card-result" >
                     <div class="card-header">
                         {{ $problema->nome }}
